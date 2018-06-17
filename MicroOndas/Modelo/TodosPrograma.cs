@@ -15,11 +15,11 @@ namespace MicroOndas.Modelo
 
         public TodosPrograma()
         {
-            Programa p1 = new Programa(1, "prato", 3, '%', "Prato");
-            Programa p2 = new Programa((decimal)0.3, "vegetal", 1, '*', "Vegetal");
-            Programa p3 = new Programa(1, "ensopado", 2, '-', "Ensopado");
-            Programa p4 = new Programa((decimal)0.4, "molho", 1, '+', "Molho");
-            Programa p5 = new Programa(2, "bebida", 4, '@', "Bebida");
+            Programa p1 = new Programa(1, new List<string> { "frango", "carne" }, 3, '%', "Prato");
+            Programa p2 = new Programa((decimal)0.3, new List<string> { "brocolis", "alface" }, 1, '*', "Vegetal");
+            Programa p3 = new Programa(1, new List<string> { "sopa", "strogonoff" }, 2, '-', "Ensopado");
+            Programa p4 = new Programa((decimal)0.4, new List<string> { "branco", "bolonhesa" }, 1, '+', "Molho");
+            Programa p5 = new Programa(2, new List<string> { "café", "chá"}, 4, '@', "Bebida");
 
             p.Add(p1);
             p.Add(p2);
@@ -30,12 +30,12 @@ namespace MicroOndas.Modelo
 
         public string usePrograma(int indice, string texto)
         {
-            if(texto == p[indice].Alimento)
+            if(p[indice].Alimentos.Contains(texto))
             {
-                return p[indice].AquecePrograma();
+                return p[indice].AquecePrograma(texto);
             }
 
-            return "Alimento incorreto";
+            throw new System.ArgumentException("Alimento inválido"); 
         }
     }
 }

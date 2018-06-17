@@ -11,24 +11,27 @@ namespace MicroOndas.Modelo
     {
         char c;
         public string NomePrograma { get; set; }
+        public List<string> Alimentos { get => alimentos; set => alimentos = value; }
+
+        private List<string> alimentos = new List<string>();
         MicroOndasRepository m1 = new MicroOndasRepository();
         public Programa()
         {
 
         }
 
-        public Programa(decimal Tempo, string Alimento, int Potencia, char c, string nome)
+        public Programa(decimal Tempo, List<string> Alimentos, int Potencia, char c, string nome)
         {
             this.Tempo = Tempo;
-            this.Alimento = Alimento;
+            this.Alimentos = Alimentos;
             this.Potencia = Potencia;
             this.c = c;
             this.NomePrograma = nome;
         }
 
-        public string AquecePrograma()
+        public string AquecePrograma(string texto)
         {
-            return m1.Aquecer(this.Tempo, this.Potencia, this.Alimento, this.c);
+            return m1.Aquecer(this.Tempo, this.Potencia, texto, this.c);
         }
 
 
