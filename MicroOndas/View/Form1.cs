@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MicroOndas.Modelo;
+using MicroOndas.View;
 
 namespace MicroOndas
 {
@@ -100,7 +101,7 @@ namespace MicroOndas
                 // this.textBox3.Text = produtoRepository.Aquecer(mc.Tempo, mc.Potencia, mc.Alimento, '.');
                 try
                 {
-                    MessageBox.Show(p.usePrograma(indicePrograma, textBox3.Text));
+                    MessageBox.Show(p.UsePrograma(indicePrograma, textBox3.Text));
                     MessageBox.Show("aquecido");
                 } catch(System.ArgumentException ex)
                 {
@@ -121,7 +122,9 @@ namespace MicroOndas
 
         private void search_Click(object sender, EventArgs e)
         {
+            Pesquisa pesquisa = new Pesquisa();
 
+            pesquisa.ShowDialog();
         }
     }
 }

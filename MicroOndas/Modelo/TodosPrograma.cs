@@ -28,7 +28,7 @@ namespace MicroOndas.Modelo
             p.Add(p5);
         }
 
-        public string usePrograma(int indice, string texto)
+        public string UsePrograma(int indice, string texto)
         {
             if(p[indice].Alimentos.Contains(texto))
             {
