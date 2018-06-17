@@ -68,12 +68,17 @@ namespace MicroOndas
 
                 produtoRepository = new MicroOndasRepository();
                                
-
                 Micro_Ondas mc = new Micro_Ondas(Convert.ToDecimal(tempo), int.Parse(this.textBox1.Text), this.textBox3.Text);
 
-                // this.textBox3.Text = produtoRepository.Aquecer(int.Parse(this.textBox2.Text), int.Parse(this.textBox1.Text), this.textBox3.Text);
-                this.textBox3.Text = produtoRepository.Aquecer(mc.Tempo, mc.Potencia, mc.Alimento);
-
+                try
+                {
+                    // this.textBox3.Text = produtoRepository.Aquecer(int.Parse(this.textBox2.Text), int.Parse(this.textBox1.Text), this.textBox3.Text);
+                    this.textBox3.Text = produtoRepository.Aquecer(mc.Tempo, mc.Potencia, mc.Alimento);
+                }
+                catch(Exception ex)  
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }
         }
             
