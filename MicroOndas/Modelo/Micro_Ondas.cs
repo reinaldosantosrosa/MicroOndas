@@ -8,7 +8,7 @@ using System.ComponentModel;
 
 namespace MicroOndas.Modelo
 {
-    class Micro_Ondas
+    public class Micro_Ondas
     {
         public Micro_Ondas()
         {
@@ -16,11 +16,11 @@ namespace MicroOndas.Modelo
         }
 
         
-        public decimal Tempo { get; private set; }
+        public decimal Tempo { get; set; }
         
-        public string Alimento { get; private set; }
+        public string Alimento { get; set; }
         
-        public int Potencia { get; private set; }
+        public int Potencia { get; set; }
 
         public Micro_Ondas(decimal tempo, int potencia, string alimento)
         {

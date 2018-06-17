@@ -18,7 +18,7 @@ namespace MicroOndas
         
 
         private string Texto;
-
+        int indicePrograma;
        
 
         public Form1()
@@ -49,16 +49,25 @@ namespace MicroOndas
         {
             
             string tempo = "";
-            tempo = this.textBox2.Text.Replace(".", ",");
+            string potencia = "";
 
-          if  ((tempo == "") || (  Convert.ToDecimal(tempo) < (1/100) ) || (Convert.ToDecimal(tempo) > 2) || (Convert.ToDecimal(tempo) <=0))
+            tempo = this.textBox2.Text.Replace(".", ",");
+            potencia = this.textBox1.Text;
+
+            if ((this.textBox2.Text == "") && (this.textBox1.Text == ""))
+            {
+                tempo = "0,30";
+                potencia = "8";
+            }
+
+            if  ((  Convert.ToDecimal(tempo) < (1/100) ) || (Convert.ToDecimal(tempo) > 2) || (Convert.ToDecimal(tempo) <0))
            
             {
                 MessageBox.Show("Campo tempo invalido");
                 this.textBox2.Focus();
             }
             else
-            if ((this.textBox1.Text== "") || (int.Parse(this.textBox1.Text) == 0) || (int.Parse(this.textBox1.Text) > 10))
+            if ((int.Parse(potencia) == 0) || (int.Parse(potencia) > 10))
             {
                 MessageBox.Show("Campo potencia deve ser informado valor de 1 a 10");
                 this.textBox1.Focus();
@@ -68,12 +77,12 @@ namespace MicroOndas
 
                 produtoRepository = new MicroOndasRepository();
                                
-                Micro_Ondas mc = new Micro_Ondas(Convert.ToDecimal(tempo), int.Parse(this.textBox1.Text), this.textBox3.Text);
-
+                Micro_Ondas mc = new Micro_Ondas(Convert.ToDecimal(tempo), int.Parse(potencia), this.textBox3.Text);
                 try
                 {
                     // this.textBox3.Text = produtoRepository.Aquecer(int.Parse(this.textBox2.Text), int.Parse(this.textBox1.Text), this.textBox3.Text);
-                    this.textBox3.Text = produtoRepository.Aquecer(mc.Tempo, mc.Potencia, mc.Alimento);
+                    this.textBox3.Text = produtoRepository.Aquecer(mc.Tempo, mc.Potencia, mc.Alimento, '.');
+                    MessageBox.Show("aquecido");
                 }
                 catch(Exception ex)  
                 {
@@ -81,11 +90,27 @@ namespace MicroOndas
                 }
             }
         }
-            
 
-            
-        
+        private void button2_Click(object sender, EventArgs e)
+        {
+            TodosPrograma p = new TodosPrograma();
+            try
+            {
+                // this.textBox3.Text = produtoRepository.Aquecer(int.Parse(this.textBox2.Text), int.Parse(this.textBox1.Text), this.textBox3.Text);
+                // this.textBox3.Text = produtoRepository.Aquecer(mc.Tempo, mc.Potencia, mc.Alimento, '.');
+                MessageBox.Show(p.usePrograma(indicePrograma,textBox3.Text));
+                MessageBox.Show("aquecido");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
 
-     
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            indicePrograma = comboBox1.SelectedIndex;
+            MessageBox.Show(comboBox1.SelectedIndex.ToString());
+        }
     }
 }
