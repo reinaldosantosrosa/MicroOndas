@@ -37,5 +37,10 @@ namespace MicroOndas.Modelo
 
             throw new System.ArgumentException("Alimento inválido"); 
         }
+
+        public Programa ShowPrograma(int indice)
+        {
+            return p[indice];
+        }
     }
 }

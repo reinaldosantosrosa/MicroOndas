@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MicroOndas.Modelo;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +13,10 @@ namespace MicroOndas.View
 {
     public partial class Pesquisa : Form
     {
+        private Programa p;
+        private TodosPrograma dominio = new TodosPrograma();
+        private int indicePrograma;
+
         public Pesquisa()
         {
             InitializeComponent();
@@ -40,6 +45,27 @@ namespace MicroOndas.View
         private void label7_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            indicePrograma = comboBox1.SelectedIndex;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            p = dominio.ShowPrograma(indicePrograma);
+            label6.Text = p.NomePrograma;
+            label6.Visible = true;
+            label7.Text = p.Potencia.ToString();
+            label7.Visible = true;
+            label8.Text = p.Tempo.ToString();
+            label8.Visible = true;
+            listView1.Items.Clear();
+            foreach(var item in p.Alimentos)
+            {
+                listView1.Items.Add(item);
+            }
         }
     }
 }
