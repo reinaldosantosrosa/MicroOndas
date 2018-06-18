@@ -55,7 +55,7 @@
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(58, 20);
             this.textBox2.TabIndex = 1;
-            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            
             // 
             // label1
             // 
@@ -65,7 +65,7 @@
             this.label1.Size = new System.Drawing.Size(40, 13);
             this.label1.TabIndex = 2;
             this.label1.Text = "Tempo";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            
             // 
             // label2
             // 
@@ -92,7 +92,7 @@
             this.label3.Size = new System.Drawing.Size(47, 13);
             this.label3.TabIndex = 5;
             this.label3.Text = "Alimento";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
+           
             // 
             // button1
             // 
