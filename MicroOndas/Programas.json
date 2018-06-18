@@ -1,45 +1,62 @@
 [
   {
-    "Alimentos": [ "Frango", "Carne" ],
-    "Tempo": 2,
-    "Potencia": 3,
-    "NomePrograma": "Pratos",
+    "Alimentos": [
+      "Frango",
+      "Carne"
+    ],
     "C": "*",
-    "Instrucao": "Aquecer frangos e carnes"
-
+    "Instrucao": "Aquecer frangos e carnes",
+    "NomePrograma": "Pratos",
+    "Tempo": 2.0,
+    "Alimento": null,
+    "Potencia": 3
   },
   {
-    "Alimentos": [ "Brocolis", "Alface" ],
-    "Tempo": 0.5,
-    "Potencia": 3,
-    "NomePrograma": "Vegetais",
+    "Alimentos": [
+      "Brocolis",
+      "Alface"
+    ],
     "C": ".",
-    "Instrucao": "Aquecer vegetais"
+    "Instrucao": "Aquecer vegetais",
+    "NomePrograma": "Vegetais",
+    "Tempo": 0.5,
+    "Alimento": null,
+    "Potencia": 3
   },
   {
-    "Alimentos": [ "Sopa", "Strogonoff" ],
-    "Tempo": 1,
-    "Potencia": 2,
-    "NomePrograma": "Ensopados",
+    "Alimentos": [
+      "Sopa",
+      "Strogonoff"
+    ],
     "C": "-",
-    "Instrucao": "Aquecer ensopados"
+    "Instrucao": "Aquecer ensopados",
+    "NomePrograma": "Ensopados",
+    "Tempo": 1.0,
+    "Alimento": null,
+    "Potencia": 2
   },
   {
-    "Alimentos": [ "Branco", "Bolonhesa" ],
-    "Tempo": 0.4,
-    "Potencia": 1,
-    "NomePrograma": "Molhos",
+    "Alimentos": [
+      "Branco",
+      "Bolonhesa"
+    ],
     "C": "%",
-    "Instrucao": "Aquecer molhos"
+    "Instrucao": "Aquecer molhos",
+    "NomePrograma": "Molhos",
+    "Tempo": 0.4,
+    "Alimento": null,
+    "Potencia": 1
   },
   {
-    "Alimentos": [ "Cafe", "Cha" ],
-    "Tempo": 2,
-    "Potencia": 4,
-    "NomePrograma": "Bebidas",
+    "Alimentos": [
+      "Cafe",
+      "Cha"
+    ],
     "C": "@",
-    "Instrucao": "Aquecer bebidas"
+    "Instrucao": "Aquecer bebidas",
+    "NomePrograma": "Bebidas",
+    "Tempo": 2.0,
+    "Alimento": null,
+    "Potencia": 4
   }
-
-
 ]

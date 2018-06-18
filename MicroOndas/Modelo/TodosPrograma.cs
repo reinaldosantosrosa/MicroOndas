@@ -60,5 +60,22 @@ namespace MicroOndas.Modelo
             var programas = JsonConvert.DeserializeObject<List<Programa>>(json);
             return programas;
         }
+
+        public void CadastraPrograma(Programa p)
+        {
+            var json = File.ReadAllText("Programas.json");
+            var programas = JsonConvert.DeserializeObject<List<Programa>>(json);
+            programas.Add(p);
+            var convertedJson = JsonConvert.SerializeObject(programas, Formatting.Indented);
+
+            File.WriteAllText("Programas.json", convertedJson);
+        }
+
+        internal void Update()
+        {
+            var json = File.ReadAllText("Programas.json");
+            var programas = JsonConvert.DeserializeObject<List<Programa>>(json);
+            this.programas = programas;
+        }
     }
 }

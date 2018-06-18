@@ -129,16 +129,20 @@ namespace MicroOndas
 
         private void button3_Click(object sender, EventArgs e)
         {
-
+            Inserir inserir = new Inserir();
+            inserir.ShowDialog();
         }
 
         private void comboBox1_DropDown(object sender, EventArgs e)
         {
+            p.Update();
             comboBox1.Items.Clear();
             foreach(var programa in p.GetProgramas())
             {
                 comboBox1.Items.Add(programa.NomePrograma);
             }
         }
+
+       
     }
 }

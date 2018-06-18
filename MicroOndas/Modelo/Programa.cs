@@ -34,6 +34,16 @@ namespace MicroOndas.Modelo
             this.NomePrograma = nome;
         }
 
+        public Programa(decimal Tempo, List<string> Alimentos, int Potencia, char c, string nome, string instrucoes)
+        {
+            this.Tempo = Tempo;
+            this.Alimentos = Alimentos;
+            this.Potencia = Potencia;
+            this.C = c;
+            this.NomePrograma = nome;
+            this.Instrucao = instrucoes;
+        }
+
         public string AquecePrograma(string texto)
         {
             return m1.Aquecer(this.Tempo, this.Potencia, texto, this.C);
