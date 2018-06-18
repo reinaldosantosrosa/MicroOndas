@@ -39,6 +39,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.search = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // textBox1
@@ -96,7 +97,7 @@
             // button1
             // 
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.button1.Location = new System.Drawing.Point(95, 184);
+            this.button1.Location = new System.Drawing.Point(95, 208);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 6;
@@ -130,7 +131,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(193, 184);
+            this.button2.Location = new System.Drawing.Point(176, 208);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 9;
@@ -140,7 +141,7 @@
             // 
             // search
             // 
-            this.search.Location = new System.Drawing.Point(208, 157);
+            this.search.Location = new System.Drawing.Point(233, 157);
             this.search.Name = "search";
             this.search.Size = new System.Drawing.Size(60, 21);
             this.search.TabIndex = 10;
@@ -148,11 +149,22 @@
             this.search.UseVisualStyleBackColor = true;
             this.search.Click += new System.EventHandler(this.search_Click);
             // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(208, 157);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(19, 21);
+            this.button3.TabIndex = 11;
+            this.button3.Text = "+";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(524, 258);
+            this.Controls.Add(this.button3);
             this.Controls.Add(this.search);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.label4);
@@ -184,6 +196,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button search;
+        private System.Windows.Forms.Button button3;
     }
 }
 

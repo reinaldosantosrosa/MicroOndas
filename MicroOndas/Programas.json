@@ -1,0 +1,22 @@
+[
+  {
+    "Alimentos": [ "Frango", "Carne" ],
+    "Tempo": "2",
+    "Potencia": "3",
+    "NomePrograma": "Prato",
+    "C": "*",
+    "Instrucao": "Aquecer frangos e carnes"
+      
+  },
+  {
+    "Alimentos": [ "Brocolis", "Alface" ],
+    "Tempo": "0,50",
+    "Potencia": "3",
+    "NomePrograma": "Vegetais",
+    "C": ".",
+    "Instrucao": "Aquecer vegetais"
+      
+  }
+
+
+]

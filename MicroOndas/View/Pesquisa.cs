@@ -39,7 +39,15 @@ namespace MicroOndas.View
 
         private void button2_Click(object sender, EventArgs e)
         {
-
+            string texto = textBox2.Text;
+            p = dominio.PesquisaAlimento(texto);
+            if (p != null)
+            {
+                ShowPrograma(p);
+            } else
+            {
+                MessageBox.Show("Alimento inválido");
+            }
         }
 
         private void label7_Click(object sender, EventArgs e)
@@ -55,14 +63,21 @@ namespace MicroOndas.View
         private void button1_Click(object sender, EventArgs e)
         {
             p = dominio.ShowPrograma(indicePrograma);
+            ShowPrograma(p);
+        }
+
+        private void ShowPrograma(Programa entrada)
+        {
             label6.Text = p.NomePrograma;
             label6.Visible = true;
             label7.Text = p.Potencia.ToString();
             label7.Visible = true;
             label8.Text = p.Tempo.ToString();
             label8.Visible = true;
+            textBox1.Visible = true;
+            textBox1.Text = p.Instrucao;
             listView1.Items.Clear();
-            foreach(var item in p.Alimentos)
+            foreach (var item in p.Alimentos)
             {
                 listView1.Items.Add(item);
             }
