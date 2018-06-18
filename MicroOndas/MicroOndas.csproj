@@ -62,6 +62,12 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositorio\IMicroOndasRepository.cs" />
     <Compile Include="Repositorio\MicroOndasRepository.cs" />
+    <Compile Include="View\Inserir.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Inserir.Designer.cs">
+      <DependentUpon>Inserir.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Pesquisa.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -80,6 +86,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="View\Inserir.resx">
+      <DependentUpon>Inserir.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\Pesquisa.resx">
       <DependentUpon>Pesquisa.cs</DependentUpon>
     </EmbeddedResource>

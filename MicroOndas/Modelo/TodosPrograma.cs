@@ -14,29 +14,17 @@ namespace MicroOndas.Modelo
     class TodosPrograma
     {
         private List<Programa> p = new List<Programa>();
-        List<Programa> programas = new List<Programa>();
+        private List<Programa> programas = new List<Programa>();
         private MicroOndasRepository m = new MicroOndasRepository();
 
         public TodosPrograma()
         {
-            Programa p1 = new Programa(1, new List<string> { "frango", "carne" }, 3, '%', "Prato");
-            p1.Instrucao = "Aquece os alimentos frango e carne";
-            Programa p2 = new Programa((decimal)0.3, new List<string> { "brocolis", "alface" }, 1, '*', "Vegetal");
-            p2.Instrucao = "Aquece os alimentos brocolis e alface";
-            Programa p3 = new Programa(1, new List<string> { "sopa", "strogonoff" }, 2, '-', "Ensopado");
-            p3.Instrucao = "Aquece os alimentos sopa e strogonoff";
-            Programa p4 = new Programa((decimal)0.4, new List<string> { "branco", "bolonhesa" }, 1, '+', "Molho");
-            p4.Instrucao = "Aquece os molhos branco e bolonhesa";
-            Programa p5 = new Programa(2, new List<string> { "café", "chá"}, 4, '@', "Bebida");
-            p5.Instrucao = "Aquece as bebidas café e chá";
-
             programas = GetDados();
+        }
 
-            p.Add(p1);
-            p.Add(p2);
-            p.Add(p3);
-            p.Add(p4);
-            p.Add(p5);
+        public List<Programa> GetProgramas()
+        {
+            return programas;
         }
 
         public string UsePrograma(int indice, string texto)

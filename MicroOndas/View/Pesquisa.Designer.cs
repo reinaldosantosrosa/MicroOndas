@@ -35,13 +35,13 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.listView1 = new System.Windows.Forms.ListView();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
@@ -106,6 +106,7 @@
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(169, 21);
             this.comboBox1.TabIndex = 8;
+            this.comboBox1.DropDown += new System.EventHandler(this.comboBox1_DropDown);
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // listView1
@@ -118,6 +119,11 @@
             this.listView1.Size = new System.Drawing.Size(169, 115);
             this.listView1.TabIndex = 9;
             this.listView1.UseCompatibleStateImageBehavior = false;
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "Alimentos";
+            this.columnHeader1.Width = 120;
             // 
             // label3
             // 
@@ -176,11 +182,6 @@
             this.label8.TabIndex = 15;
             this.label8.Text = "resposta";
             this.label8.Visible = false;
-            // 
-            // columnHeader1
-            // 
-            this.columnHeader1.Text = "Alimentos";
-            this.columnHeader1.Width = 120;
             // 
             // textBox1
             // 

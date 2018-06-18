@@ -37,11 +37,6 @@ namespace MicroOndas.Repositorio
             
         }
 
-        //string IMicroOndasRepository.Aquecer(decimal Tempo, int Potencia, string Texto, char c)
-        //{
-        //    throw new NotImplementedException();
-        //}
-
 
     }
 }

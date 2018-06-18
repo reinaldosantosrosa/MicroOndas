@@ -60,6 +60,15 @@ namespace MicroOndas.View
             indicePrograma = comboBox1.SelectedIndex;
         }
 
+        private void comboBox1_DropDown(object sender, EventArgs e)
+        {
+            comboBox1.Items.Clear();
+            foreach (var programa in dominio.GetProgramas())
+            {
+                comboBox1.Items.Add(programa.NomePrograma);
+            }
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
             p = dominio.ShowPrograma(indicePrograma);

@@ -20,7 +20,7 @@ namespace MicroOndas
 
         private string Texto;
         int indicePrograma;
-       
+        private TodosPrograma p = new TodosPrograma();
 
         public Form1()
         {
@@ -94,7 +94,7 @@ namespace MicroOndas
 
         private void button2_Click(object sender, EventArgs e)
         {
-            TodosPrograma p = new TodosPrograma();
+            
             try
             {
                 // this.textBox3.Text = produtoRepository.Aquecer(int.Parse(this.textBox2.Text), int.Parse(this.textBox1.Text), this.textBox3.Text);
@@ -130,6 +130,15 @@ namespace MicroOndas
         private void button3_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void comboBox1_DropDown(object sender, EventArgs e)
+        {
+            comboBox1.Items.Clear();
+            foreach(var programa in p.GetProgramas())
+            {
+                comboBox1.Items.Add(programa.NomePrograma);
+            }
         }
     }
 }
