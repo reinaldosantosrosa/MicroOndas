@@ -173,6 +173,7 @@
             this.Controls.Add(this.button1);
             this.Name = "Inserir";
             this.Text = "Inserir";
+
             this.ResumeLayout(false);
             this.PerformLayout();
 

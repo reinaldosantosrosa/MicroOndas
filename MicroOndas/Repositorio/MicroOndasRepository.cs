@@ -10,7 +10,7 @@ namespace MicroOndas.Repositorio
     {
 
         
-        private string txtTexto = "";
+        
         private string txtPonto = "";
         private int _tempo;
 

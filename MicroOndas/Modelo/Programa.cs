@@ -14,8 +14,6 @@ namespace MicroOndas.Modelo
         public string Instrucao {get; set;}
         public string NomePrograma { get; set; }
 
-        //public List<string> Alimentos { get => alimentos; set => alimentos = value; }
-
         public List<string> Alimentos = new List<string>();
 
         MicroOndasRepository m1 = new MicroOndasRepository();

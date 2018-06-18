@@ -29,8 +29,8 @@ namespace MicroOndas.View
         private void button1_Click(object sender, EventArgs e)
         {
             string nome = textBox1.Text;
-            decimal tempo = decimal.Parse(textBox3.Text);
-            int potencia = int.Parse(textBox2.Text);
+            decimal tempo = decimal.Parse(textBox2.Text);
+            int potencia = int.Parse(textBox3.Text);
             string instrucoes = textBox5.Text;
             List<string> alimentos = textBox4.Lines.ToList<string>();
             char c = textBox6.Text[0];
@@ -39,7 +39,12 @@ namespace MicroOndas.View
 
             dominio.CadastraPrograma(p);
 
+            Form1 f = new Form1();
+            f.Focus();
+           
             this.Close();
         }
+
+
     }
 }

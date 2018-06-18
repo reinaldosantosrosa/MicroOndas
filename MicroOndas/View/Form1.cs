@@ -94,21 +94,21 @@ namespace MicroOndas
 
         private void button2_Click(object sender, EventArgs e)
         {
-            
+
             try
             {
                 // this.textBox3.Text = produtoRepository.Aquecer(int.Parse(this.textBox2.Text), int.Parse(this.textBox1.Text), this.textBox3.Text);
                 // this.textBox3.Text = produtoRepository.Aquecer(mc.Tempo, mc.Potencia, mc.Alimento, '.');
-                try
-                {
-                    MessageBox.Show(p.UsePrograma(indicePrograma, textBox3.Text));
-                    MessageBox.Show("aquecido");
-                } catch(System.ArgumentException ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
-                
+
+                MessageBox.Show(p.UsePrograma(indicePrograma, textBox3.Text));
+                MessageBox.Show("aquecido");
+
             }
+            catch (System.ArgumentException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
@@ -118,6 +118,8 @@ namespace MicroOndas
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             indicePrograma = comboBox1.SelectedIndex;
+
+
         }
 
         private void search_Click(object sender, EventArgs e)
@@ -143,6 +145,9 @@ namespace MicroOndas
             }
         }
 
-       
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
