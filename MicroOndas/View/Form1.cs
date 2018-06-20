@@ -20,13 +20,23 @@ namespace MicroOndas
         int indicePrograma;
         private TodosPrograma p = new TodosPrograma();
 
+        LancaExececaoNegocio2 lancaExcecao = new LancaExececaoNegocio2();
+        
+
         public Form1()
         {
             InitializeComponent();
 
 
+
+            //lancaExcecao.NomeExcecao += new LancaExececaoNegocio.LancaExcecao(Exibe_Mensagem);
+
         }
 
+        private void Exibe_Mensagem(string ex)
+        {
+            MessageBox.Show(ex);
+        }
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -37,31 +47,47 @@ namespace MicroOndas
             tempo = this.textBox2.Text.Replace(".", ",");
             potencia = this.textBox1.Text;
 
-            if ((this.textBox2.Text == "") && (this.textBox1.Text == ""))
-            {
-                tempo = "0,30";
-                potencia = "8";
-            }
+          
+                if ((this.textBox2.Text == "") && (this.textBox1.Text == ""))
+                {
+                    tempo = "0,30";
+                    potencia = "8";
+                }
 
-            if  (((Convert.ToDecimal(tempo) < (1/100) ) || (Convert.ToDecimal(tempo) > 2) || (Convert.ToDecimal(tempo) <0) ))
-           
-            {
-                MessageBox.Show("Campo tempo invalido");
-                this.textBox2.Focus();
-            }
-            else
+                if (((Convert.ToDecimal(tempo) < (1 / 100)) || (Convert.ToDecimal(tempo) > 2) || (Convert.ToDecimal(tempo) < 0)))
+
+                {
+                // MessageBox.Show("Campo tempo invalido");
+                
+
+                    try
+                    {
+                      //  throw new MyException(MyException.MsgDefinida(1));
+                    throw new TrataExcecao("teste");
+                    }
+                    catch (TrataExcecao ex)
+                    {
+                        MessageBox.Show(ex.Message);
+
+
+                    }
+
+                   // throw new TrataExcecao("t");
+
+
+                    //  this.textBox2.Focus();
+                }
+            
+        
+
+             
             if ((int.Parse(potencia) == 0) || (int.Parse(potencia) > 10))
             {
                 MessageBox.Show("Campo potencia deve ser informado valor de 1 a 10");
                 this.textBox1.Focus();
             }
-            else
-            {
-
-  
-
-
-                Micro_Ondas mc = new Micro_Ondas(Convert.ToDecimal(tempo), int.Parse(potencia), this.textBox3.Text);
+         
+               Micro_Ondas mc = new Micro_Ondas(Convert.ToDecimal(tempo), int.Parse(potencia), this.textBox3.Text);
 
 
                 try
@@ -79,14 +105,12 @@ namespace MicroOndas
 
 
                 }
-                catch (Exception ex)  
+                catch  (Exception ex)
                 {
-                    MessageBox.Show(ex.Message);
+                           Exibe_Mensagem(ex.Message);
                 }
-            }
-        }
-
-        private void button2_Click(object sender, EventArgs e)
+            
+        }        private void button2_Click(object sender, EventArgs e)
         {
 
             try
@@ -146,5 +170,10 @@ namespace MicroOndas
         {
             MessageBox.Show("Aquecido");
         }
+
+
     }
-}
+
+
+   
+    }
