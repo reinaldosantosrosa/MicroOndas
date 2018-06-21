@@ -12,12 +12,15 @@ namespace MicroOndas.Repositorio
 
         public readonly List<string> Erros;
 
+
+
         public TrataExcecao() : base()
         {
             Erros = new List<string>();
         }
 
-        public TrataExcecao(params string[] erros): this(new List<string> (erros))
+        public TrataExcecao(params string[] erros)
+            : this(new List<string>(erros))
         {
            
         }
@@ -28,11 +31,13 @@ namespace MicroOndas.Repositorio
 
             Erros = new List<string>();
             Erros.AddRange(erros);
+            
 
         }
 
 
-        public TrataExcecao(String erro, Exception ex): base(erro, ex)
+        public TrataExcecao(String erro, Exception ex)
+            : base(erro, ex)
         {
             Erros = new List<string>
             {
@@ -40,5 +45,20 @@ namespace MicroOndas.Repositorio
             };
         }
 
+        public string GetErros()
+        {
+            
+            return Erros.Any()
+               ? string.Join(", ", Erros)
+               : string.Empty;
+
+
+
+
+        }
+
+       
+
+     
     }
 }

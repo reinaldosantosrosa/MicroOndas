@@ -8,8 +8,9 @@ namespace MicroOndas.Repositorio
 {
     public interface IMicroOndasRepository
     {
-  
-        string Aquecer(decimal Tempo, int Potencia, string Texto, char c);
+        //decimal Tempo, int Potencia, string Texto, char c
+        void Aquecer();
+        string getTexto();
 
         
         

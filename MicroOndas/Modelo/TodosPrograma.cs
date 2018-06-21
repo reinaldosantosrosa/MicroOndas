@@ -17,6 +17,8 @@ namespace MicroOndas.Modelo
         private List<Programa> programas = new List<Programa>();
         private MicroOndasRepository m = new MicroOndasRepository();
 
+        LancaExececaoNegocio lancaExcecao = new LancaExececaoNegocio();
+
         public TodosPrograma()
         {
             programas = GetDados();
@@ -27,14 +29,15 @@ namespace MicroOndas.Modelo
             return programas;
         }
 
-        public string UsePrograma(int indice, string texto)
+        public void UsePrograma(int indice, string texto)
         {
-            if(programas[indice].Alimentos.Contains(texto))
+            if  (  programas[indice].Alimentos.Contains(texto))
             {
-                return programas[indice].AquecePrograma(texto);
-            }
 
-            throw new System.ArgumentException("Alimento inválido"); 
+               //programas[indice].AquecePrograma(texto);
+            }
+            else
+            throw new TrataExcecao(lancaExcecao.LancaErro(3));
         }
 
         public Programa ShowPrograma(int indice)
@@ -51,6 +54,7 @@ namespace MicroOndas.Modelo
                     return i;
                 }
             }
+
             return null;
         }
 

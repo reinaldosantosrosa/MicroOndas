@@ -7,33 +7,34 @@ using MicroOndas.Repositorio;
 
 namespace MicroOndas.Repositorio
 {
-   public class LancaExececaoNegocio2
+   public class LancaExececaoNegocio
     {
 
-        public LancaExececaoNegocio2()
+        public LancaExececaoNegocio()
         {
         }
 
-        public void LancaErro(int erro)
+        public string LancaErro(int erro)
         {
+            
+                string msg = "";
 
-            switch(erro)
+            switch (erro)
             {
-                case 1: throw new TrataExcecao("Potencia nao pode ser maior que 10");
-                case 2: throw new TrataExcecao("Potencia invalida");
-                case 3: throw new TrataExcecao("Tempo nao pode ser maior que 2 minutos");
-                case 4: throw new TrataExcecao("Tempo não pode ser menor que 1 segundo");
-                
-
+                case 1:  msg = "Potencia deve ser menor ou igual a 10 e maior que 1";   break;
+                case 2: msg = "Valor Inválido. O tempo deve ser menor ou igual a 2 minutos e maior ou igual a 1 segundo";break;
+                case 3: msg = "Alimento invalido"; break;
+           
 
             }
 
-            this.NomeExcecao("");
+            
+            return msg;
+          
+            
         }
 
-        public delegate void LancaExcecao(string ex);
-        //Cria um evento
-        public event LancaExcecao NomeExcecao;
+    
 
     }
 

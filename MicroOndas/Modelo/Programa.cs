@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace MicroOndas.Modelo
@@ -16,7 +17,7 @@ namespace MicroOndas.Modelo
 
         public List<string> Alimentos = new List<string>();
 
-        MicroOndasRepository m1 = new MicroOndasRepository();
+        Thread thread = null;
 
         public Programa()
         {
@@ -42,9 +43,11 @@ namespace MicroOndas.Modelo
             this.Instrucao = instrucoes;
         }
 
-        public string AquecePrograma(string texto)
+        public void AquecePrograma(string texto)
         {
-            return m1.Aquecer(this.Tempo, this.Potencia, texto, this.C);
+            MicroOndasRepository m1 = new MicroOndasRepository(this.Tempo, this.Tempo, this.Potencia, texto, this.C);
+
+            m1.Aquecer();
         }
 
 

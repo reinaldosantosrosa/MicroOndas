@@ -28,5 +28,7 @@ namespace MicroOndas.Modelo
             this.Potencia = potencia;
             this.Alimento = alimento;
         }
+
+
     }
 }
